@@ -65,7 +65,6 @@ const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
