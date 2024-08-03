@@ -7,12 +7,12 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    title: "Techino Club Website",
+    description: "A MERN stack-powered site for Wollo University’s Techino Club that simplifies student registration and event management",
+    image: "/images/projects/techino.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Dawithabte31/KIOT-Techino_club",
+    previewUrl: "https://kiot-techino.netlify.app/",
   },
   {
     id: 2,
