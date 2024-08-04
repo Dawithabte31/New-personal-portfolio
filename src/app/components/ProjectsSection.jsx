@@ -74,8 +74,8 @@ const ProjectsSection = () => {
   );
 
   const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
+    initial: { y: 0, opacity: 10 },
+    animate: { y: 50, opacity: 100 },
   };
 
   return (
@@ -107,7 +107,7 @@ const ProjectsSection = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+            transition={{ duration: 0.1, delay: index * 0.4 }}
           >
             <ProjectCard
               key={project.id}
