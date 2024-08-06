@@ -14,7 +14,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="text-center "
-        >
+         >
           <p className="text-white mb-4 text-2xl sm:text-5xl lg:text-5xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-400">
               Hello, I&apos;m Dawit
