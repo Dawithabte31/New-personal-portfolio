@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useTransition, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import TabButton from "./TabButton";
 
 const TAB_DATA = [
@@ -51,18 +52,30 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white bg-slate-600 mx-auto py-16 flex items-center justify-center max-h-screen">
-      <div className="bg-red-600 max-w-2xl mx-auto p-8 rounded-lg shadow-lg">
+    <section className="text-white mx-auto py-16 flex items-center justify-center max-h-screen mb-[100px]">
+      <div className="max-w-2xl mx-auto p-8 rounded-lg shadow-lg ">
         <div className="text-center flex flex-col items-center">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg mb-8">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-white"
+          >
+            About Me
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-base lg:text-lg mb-8"
+          >
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
             working with JavaScript, React, Redux, Node.js, Express, MongoDb,
             MySql, HTML, CSS, and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
-          </p>
+          </motion.p>
           <div className="flex space-x-4 mb-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
@@ -83,9 +96,17 @@ const AboutSection = () => {
               Certifications
             </TabButton>
           </div>
-          <div>
-            {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
+          <AnimatePresence>
+            <motion.div
+              key={tab}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1}}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.8 }}
+            >
+              {TAB_DATA.find((t) => t.id === tab).content}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

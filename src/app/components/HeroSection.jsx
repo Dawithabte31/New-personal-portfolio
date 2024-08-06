@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className=" mx-auto bg-blue-600 flex items-center justify-center max-h-screen">
+    <section className=" mx-auto  flex items-center justify-center h-screen">
       <div className="max-w-2xl text-center">
         <motion.div
           initial={{ opacity: 0.5, scale: 0.9 }}
