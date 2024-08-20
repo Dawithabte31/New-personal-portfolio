@@ -73,8 +73,8 @@ const AboutSection = () => {
             interactive and responsive web applications. I have experience
             working with JavaScript, React, Redux, Node.js, Express, MongoDb,
             MySql, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            {/* looking to expand my knowledge and skill set. I am a team player and
+            I am excited to work with others to create amazing applications. */}
           </motion.p>
           <div className="flex space-x-4 mb-8">
             <TabButton
