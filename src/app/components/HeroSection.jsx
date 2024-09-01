@@ -4,11 +4,13 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+ 
 const HeroSection = () => {
   return (
-    <section className=" mx-auto  flex items-center justify-center h-screen">
-      <div className="max-w-2xl text-center">
+    <BackgroundBeamsWithCollision>
+          <section className=" mx-auto bg-transparent w-[100%]  flex items-center justify-center h-screen">
+      <div className="max-w-2xl bg-transparent text-center">
         <motion.div
           initial={{ opacity: 0.5, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -43,7 +45,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
     </section>
+    </BackgroundBeamsWithCollision>
   );
-};
-
+}
 export default HeroSection;

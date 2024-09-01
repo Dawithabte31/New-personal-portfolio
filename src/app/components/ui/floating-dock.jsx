@@ -18,7 +18,7 @@
  
  export const FloatingDock = ({ items, desktopClassName, mobileClassName }) => {
    return (
-     <div className="w-[100px]">
+     <div className="w-[100%]  flex  bg-transparent item items-center justify-center gap-5 fixed z-50  ">
        <FloatingDockDesktop items={items} className={desktopClassName} />
        <FloatingDockMobile items={items} className={mobileClassName} />
      </div>
@@ -57,7 +57,7 @@
                    key={item.title}
                    className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                  >
-                   <div className="h-4 w-4">{item.icon}</div>
+                   <div className="h-4 w-4 ">{item.icon}</div>
                  </Link>
                </motion.div>
              ))}
@@ -81,7 +81,7 @@
        onMouseMove={(e) => mouseX.set(e.pageX)}
        onMouseLeave={() => mouseX.set(Infinity)}
        className={cn(
-         "mx-auto hidden md:flex h-16 gap-4 items-end w-[130px] mt-[50px] rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
+         "mx-auto hidden md:flex h-16 gap-4 items-end w-[60vw] flex justify-center  mt-[50px] rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 ",
          className
        )}
      >
