@@ -18,9 +18,9 @@
  
  export const FloatingDock = ({ items, desktopClassName, mobileClassName }) => {
    return (
-     <div className="w-[100%]  flex  bg-transparent item items-center justify-center gap-5 fixed z-50  ">
+     <div className="w-[100%]   flex  bg-transparent  justify-center gap-5 md:fixed md:z-50 h-0 items-center pt-4 bg-none md:h-16   ">
        <FloatingDockDesktop items={items} className={desktopClassName} />
-       <FloatingDockMobile items={items} className={mobileClassName} />
+       {/* <FloatingDockMobile items={items} className={mobileClassName} /> */}
      </div>
    );
  };
@@ -33,7 +33,7 @@
          {open && (
            <motion.div
              layoutId="nav"
-             className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2"
+             className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 "
            >
              {items.map((item, idx) => (
                <motion.div
@@ -66,7 +66,7 @@
        </AnimatePresence>
        <button
          onClick={() => setOpen(!open)}
-         className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
+         className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center "
        >
          <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
        </button>
@@ -81,7 +81,7 @@
        onMouseMove={(e) => mouseX.set(e.pageX)}
        onMouseLeave={() => mouseX.set(Infinity)}
        className={cn(
-         "mx-auto hidden md:flex h-16 gap-4 items-end w-[60vw] flex justify-center  mt-[50px] rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 ",
+         "mx-auto hidden md:flex h-14 gap-4 items-end align-bottom  md:w-[40vw] w-[60vw] flex justify-center flex gap-8 md:gap-16    mt-[50px] rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 ",
          className
        )}
      >
@@ -142,7 +142,7 @@
          style={{ width, height }}
          onMouseEnter={() => setHovered(true)}
          onMouseLeave={() => setHovered(false)}
-         className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
+         className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex  items-center justify-center relative "
        >
          <AnimatePresence>
            {hovered && (

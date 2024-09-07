@@ -67,7 +67,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-base lg:text-lg mb-8"
+            className="text-base lg:text-lg mb-8 "
           >
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
