@@ -9,15 +9,9 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>react.js</li>
-        <li>next.js</li>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>JavaScript</li>
-        <li>MongoDb</li>
-        <li>Mysql</li>
-      </ul>
+      <div className="flex flex-col">
+        <p className="rounded-2xl px-2 border-2">React</p>
+      </div>
     ),
   },
   {
@@ -100,7 +94,7 @@ const AboutSection = () => {
             <motion.div
               key={tab}
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1}}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.8 }}
             >

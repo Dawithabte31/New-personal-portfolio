@@ -67,14 +67,7 @@ const EmailSection = () => {
         </p>
 
         {/* Provide actual values or remove if not needed */}
-        <div className="">
-          {" "}
-          <FloatingDock
-            items={dockItems}
-            desktopClassName="your-desktop-class"
-            mobileClassName="your-mobile-class"
-          />
-        </div>
+       
       </div>
       <div>
         {emailSubmitted ? (
