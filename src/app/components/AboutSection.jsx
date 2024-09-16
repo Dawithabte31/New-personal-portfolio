@@ -9,8 +9,23 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="flex flex-col">
-        <p className="rounded-2xl px-2 border-2">React</p>
+      <div className="flex flex-col gap-6 justify-center flex-wrap">
+        <div className="flex flex-row gap-4 justify-center flex-wrap">
+        <p className="rounded-2xl px-2 border-2 p-1 flex items-center">HTML</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">CSS</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">JavaScript</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">TypeScript</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">React.js</p>
+        
+        </div>
+        <div className="flex flex-row gap-4 justify-center flex-wrap">
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Nextjs</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Node.js</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Express.js</p>
+        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Laravel</p>
+
+        </div>
+      
       </div>
     ),
   },
