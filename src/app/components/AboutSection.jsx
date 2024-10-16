@@ -11,18 +11,18 @@ const TAB_DATA = [
     content: (
       <div className="flex flex-col gap-6 justify-center flex-wrap">
         <div className="flex flex-row gap-4 justify-center flex-wrap">
-        <p className="rounded-2xl px-2 border-2 p-1 flex items-center">HTML</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">CSS</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">JavaScript</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">TypeScript</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">React.js</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">HTML</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">CSS</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">JavaScript</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">TypeScript</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">React.js</p>
         
         </div>
         <div className="flex flex-row gap-4 justify-center flex-wrap">
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Nextjs</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Node.js</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Express.js</p>
-        <p className="rounded-2xl px-2 border-2  p-1 flex items-center">Laravel</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">Nextjs</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">Node.js</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">Express.js</p>
+        <p className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer">Laravel</p>
 
         </div>
       
