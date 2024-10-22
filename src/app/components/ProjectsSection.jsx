@@ -13,15 +13,18 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Dawithabte31/KIOT-Techino_club",
     previewUrl: "https://kiot-techino.netlify.app/",
+    technos:["React","ExptressJs","TaiwindCss"],
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
+    title: "Photography Portfolio Website",
     description: "Project 2 description",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    technos:["React","ExptressJs","TaiwindCss"],
+
   },
   {
     id: 3,
@@ -31,6 +34,8 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    technos:["React","ExptressJs","TaiwindCss"],
+
   },
   {
     id: 4,
@@ -40,6 +45,8 @@ const projectsData = [
     tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
+    technos:["React","ExptressJs","TaiwindCss"],
+
   },
   {
     id: 5,
@@ -49,6 +56,8 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    technos:["React","ExptressJs","TaiwindCss"],
+
   },
   {
     id: 6,
@@ -58,13 +67,15 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    technos:["React","ExptressJs","TaiwindCss"],
   },
 ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false }); // Track when the section is in view
+
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
@@ -73,13 +84,30 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
 
+  // Variants for scaling the section
+  const sectionVariants = {
+    hidden: { scale: 0.9, opacity: 0 }, // Smaller and transparent
+    visible: { scale: 1, opacity: 1 }, // Full size and opaque
+    exit: { scale: 0.9, opacity: 0 }, // Shrink when exiting
+  };
+
   const cardVariants = {
-    initial: { y: 0, opacity: 10 },
-    animate: { y: 50, opacity: 100 },
+    hidden: { scale: 0.8, opacity: 0 }, // Smaller and transparent
+    visible: { scale: 1, opacity: 1 }, // Full size and opaque
+    exit: { scale: 0.8, opacity: 0 }, // Shrink when exiting
   };
 
   return (
-    <section id="projects">
+    <motion.section
+      id="projects"
+      ref={ref}
+      variants={sectionVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"} // Trigger animation based on in view status
+      exit="exit" // Add exit animation
+      transition={{ duration: 0.5 }}
+      className="mb-10"
+    >
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
@@ -100,27 +128,30 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.1, delay: index * 0.4 }}
-          >
-            <ProjectCard
+      <ul className="grid md:grid-cols-2 gap-8 md:gap-12">
+        {filteredProjects.map((project, index) => {
+          return (
+            <motion.li
               key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
+              variants={cardVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"} // Trigger animation based on in view status
+              exit="exit" // Add exit animation
+              transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered animation for cards
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+                technos={project.technos}
+              />
+            </motion.li>
+          );
+        })}
       </ul>
-    </section>
+    </motion.section>
   );
 };
 
