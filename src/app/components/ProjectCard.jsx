@@ -4,7 +4,14 @@ import Link from "next/link";
 import { WobbleCard } from "./ui/wobble-card";
 import Image from "next/image";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl,technos}) => {
+const ProjectCard = ({
+  imgUrl,
+  title,
+  description,
+  gitUrl,
+  previewUrl,
+  technos,
+}) => {
   return (
     // <div>
     //   <div
@@ -31,21 +38,17 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl,technos}) 
     //     <p className="text-[#ADB7BE]">{description}</p>
     //   </div>
     // </div>
-    <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 max-w-7xl mx-auto w-full hover:cursor-pointer">
-      <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-blue-900 min-h-[550px] lg:min-h-[400px]"
-      >
+    <div className=" grid self-centent grid-cols-2 lg:grid-cols-2  max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-2 md:h-[70%] bg-gray-800 lg:min-h-[300px] ">
         <div className="max-w-xs">
-          <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            {title}{" "}
+          <h2 className="w-[450px] text-left text-balance text-base md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
+            {title}
           </h2>
-          <p className="mt-4 text-left  text-base/6 text-neutral-200">
+          <p className="mt-4 text-left md:w-[200px]  text-base/6 text-neutral-200">
             {description}
           </p>
-          <div className="flex flex-row">
 
-          </div>
-          <div className="flex flex-row">
+          {/* <div className="flex flex-row">
           <Link
             href={gitUrl}
             className="h-10 w-10 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
@@ -58,24 +61,23 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl,technos}) 
           >
             <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
           </Link>
-          </div>
-          <div>
-            <div className="flex flex-row gap-2 flex-wrap mr-2">
-        {technos.map((techno) => (
+          </div> */}
           
-            <p className="flex flex-row rounded-lg bg-slate-500 p-2">
-              {techno}
-            </p>
-        ))}
-        </div>
-      </div>
+            <div className="flex flex-row gap-2 flex-wrap fixed md:w-[200px] mb-4">
+              {technos.map((techno) => (
+                <p className="flex text-[9px]  flex-row rounded-full bg-gray-800 p-2 mt-2">
+                  {techno}
+                </p>
+              ))}
+            </div>
+          
         </div>
         <Image
           src={imgUrl}
-          width={500}
-          height={400}
+          width={350}
+          height={200}
           alt="linear demo image"
-          className="absolute -right-3 lg:-right-[10%] lg:-bot-3  grayscale-2 filter -bottom-10 object-contain rounded-2xl"
+          className="absolute  md:-bottom-4 md:-right-[10%]  sm:hidden md:block lg:-bot-3  grayscale-2 filter -bottom-10 object-contain rounded-2xl"
         />
       </WobbleCard>
     </div>

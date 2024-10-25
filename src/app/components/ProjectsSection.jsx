@@ -7,24 +7,24 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "Techino Club Website",
-    description: "A MERN stack-powered site for Wollo University’s Techino Club that simplifies student registration and event management",
+    title: "Wollo University Techino Club Website",
+    description:
+      "A MERN stack-powered site for Wollo University’s Techino Club that simplifies student registration and event management",
     image: "/images/projects/techino.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Dawithabte31/KIOT-Techino_club",
     previewUrl: "https://kiot-techino.netlify.app/",
-    technos:["React","ExptressJs","TaiwindCss"],
+    technos: ["React", "ExptressJs", "TaiwindCss"],
   },
   {
     id: 2,
-    title: "Photography Portfolio Website",
+    title: "Gizebet Project Management System",
     description: "Project 2 description",
-    image: "/images/projects/2.png",
+    image: "/images/projects/pmp.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    technos:["React","ExptressJs","TaiwindCss"],
-
+    technos: ["React", "ExptressJs", "TaiwindCss","React", "ExptressJs", "TaiwindCss"],
   },
   {
     id: 3,
@@ -34,47 +34,15 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    technos:["React","ExptressJs","TaiwindCss"],
+    technos: ["React", "ExptressJs", "TaiwindCss"],
+  },
 
-  },
-  {
-    id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technos:["React","ExptressJs","TaiwindCss"],
-
-  },
-  {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technos:["React","ExptressJs","TaiwindCss"],
-
-  },
-  {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technos:["React","ExptressJs","TaiwindCss"],
-  },
 ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false }); // Track when the section is in view
+  const isInView = useInView(ref, { once: false });
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
@@ -128,16 +96,17 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul className="grid md:grid-cols-2 gap-8 md:gap-12">
+      <ul className="grid md:grid-cols-2 gap-1 md:gap-2 w-[100%] md:px-14">
         {filteredProjects.map((project, index) => {
           return (
             <motion.li
+              className="flex h-[400px]"
               key={project.id}
               variants={cardVariants}
               initial="hidden"
-              animate={isInView ? "visible" : "hidden"} // Trigger animation based on in view status
-              exit="exit" // Add exit animation
-              transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered animation for cards
+              animate={isInView ? "visible" : "hidden"} 
+              exit="exit" 
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <ProjectCard
                 title={project.title}
