@@ -38,13 +38,14 @@ const ProjectCard = ({
     //     <p className="text-[#ADB7BE]">{description}</p>
     //   </div>
     // </div>
-    <div className=" grid self-centent grid-cols-2 lg:grid-cols-2  max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer">
-      <WobbleCard containerClassName="col-span-1 lg:col-span-2 md:h-[70%] bg-gray-800 lg:min-h-[300px] ">
+    <div className=" max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-2 md:h-[80%] bg-gray-800 lg:min-h-[300px]">
+
         <div className="max-w-xs">
           <h2 className="w-[450px] text-left text-balance text-base md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
             {title}
           </h2>
-          <p className="mt-4 text-left md:w-[200px]  text-base/6 text-neutral-200">
+          <p className="mt-2 text-left md:w-[200px]  text-base/6 text-neutral-200">
             {description}
           </p>
 
@@ -63,9 +64,9 @@ const ProjectCard = ({
           </Link>
           </div> */}
           
-            <div className="flex flex-row gap-2 flex-wrap fixed md:w-[200px] mb-4">
+            <div className="flex flex-row gap-1 justify-center flex-wrap fixed md:w-[200px] mb-4">
               {technos.map((techno) => (
-                <p className="flex text-[9px]  flex-row rounded-full bg-gray-800 p-2 mt-2">
+                <p className="flex text-[10px]  flex-row rounded-full bg-gray-800 p-2 mt-2">
                   {techno}
                 </p>
               ))}
@@ -77,7 +78,7 @@ const ProjectCard = ({
           width={350}
           height={200}
           alt="linear demo image"
-          className="absolute  md:-bottom-4 md:-right-[10%]  sm:hidden md:block lg:-bot-3  grayscale-2 filter -bottom-10 object-contain rounded-2xl"
+          className="absolute  md:-bottom-4 md:-right-[10%]  hidden md:block lg:-bot-3  grayscale-2 filter -bottom-10 object-contain rounded-2xl"
         />
       </WobbleCard>
     </div>

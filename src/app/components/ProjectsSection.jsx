@@ -19,7 +19,7 @@ const projectsData = [
   {
     id: 2,
     title: "Gizebet Project Management System",
-    description: "Project 2 description",
+    description: "A project management portal for efficient task tracking, updates, and collaboration.",
     image: "/images/projects/pmp.png",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -96,7 +96,7 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul className="grid md:grid-cols-2 gap-1 md:gap-2 w-[100%] md:px-14">
+      <ul className="grid md:grid-cols-2 md:gap-2 w-[100%] md:px-14">
         {filteredProjects.map((project, index) => {
           return (
             <motion.li
