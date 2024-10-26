@@ -21,9 +21,9 @@ const TAB_DATA = [
             },
           },
         }}
-        className="flex flex-col gap-6 justify-center flex-wrap"
+        className="flex flex-col gap-4 justify-center flex-wrap"
       >
-        <div className="flex flex-row gap-4 justify-center flex-wrap w-[100%]">
+        <div className="flex flex-row gap-4 justify-center flex-wrap w-[80%]">
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 20 },

@@ -14,7 +14,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Dawithabte31/KIOT-Techino_club",
     previewUrl: "https://kiot-techino.netlify.app/",
-    technos: ["React", "ExptressJs", "TaiwindCss"],
+    technos: ["React", "ExpressJs", "TaiwindCss"],
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    technos: ["React", "ExptressJs", "TaiwindCss","React", "ExptressJs", "TaiwindCss"],
+    technos: ["React", "Inertia", ,"Laravel","TaiwindCss"],
   },
   {
     id: 3,
