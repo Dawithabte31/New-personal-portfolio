@@ -4,6 +4,8 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
+import AboutDescription from "./components/AboutDescription";
+import SkillList from "./components/SkillList";
 import AchievementsSection from "./components/AchievementsSection";
 
 export default function Home() {
@@ -12,9 +14,11 @@ export default function Home() {
       <Navbar />
       <div className="container mt-24 mx-auto w-[100%] p-0">
         <HeroSection />
+        <AboutDescription/>
         {/* <AchievementsSection /> */}
-        <AboutSection />
+        {/* <AboutSection /> */}
         <ProjectsSection />
+        <SkillList/>
         <EmailSection />
       </div>
       <Footer />

@@ -67,7 +67,6 @@ const EmailSection = () => {
         </p>
 
         {/* Provide actual values or remove if not needed */}
-       
       </div>
       <div>
         {emailSubmitted ? (
