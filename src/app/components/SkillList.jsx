@@ -19,7 +19,11 @@ const SkillList = () => {
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center text-center min-h-screen">
+    <div
+      id="skills"
+      ref={ref}
+      className="flex flex-col items-center justify-center text-center min-h-screen"
+    >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -43,7 +47,14 @@ const SkillList = () => {
         className="flex flex-col gap-4 justify-center flex-wrap w-[70%] mb-4"
       >
         <div className="flex flex-row gap-4 justify-center flex-wrap w-full">
-          {["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js"].map((skill) => (
+          {[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "React.js",
+            "Next.js",
+          ].map((skill) => (
             <motion.p
               key={skill}
               variants={{

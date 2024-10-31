@@ -19,7 +19,11 @@ const AboutDescription = () => {
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center text-center min-h-screen">
+    <div
+    id="aboutme"
+      ref={ref}
+      className="flex flex-col items-center justify-center text-center min-h-screen"
+    >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -34,9 +38,11 @@ const AboutDescription = () => {
         transition={{ duration: 0.6 }}
         className="text-base sm:text-lg leading-relaxed max-w-2xl text-white"
       >
-        I am a full stack web developer with a passion for creating interactive and responsive web applications.
-        I have experience working with JavaScript, React, Redux, Node.js, Express, MongoDb, MySql, HTML, CSS, and Git.
-        I am a quick learner and I am always looking to expand my knowledge and skill set.
+        I am a full stack web developer with a passion for creating interactive
+        and responsive web applications. I have experience working with
+        JavaScript, React, Redux, Node.js, Express, MongoDb, MySql, HTML, CSS,
+        and Git. I am a quick learner and I am always looking to expand my
+        knowledge and skill set.
       </motion.p>
     </div>
   );
