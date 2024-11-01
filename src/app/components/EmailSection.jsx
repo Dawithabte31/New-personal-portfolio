@@ -1,4 +1,5 @@
-"use client";
+"use client"; // Add this line at the top
+
 import React, { useState } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
@@ -20,8 +21,8 @@ const dockItems = [
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [email, setEmail] = useState("");  // State for email input
-  const [message, setMessage] = useState("");  // State for message input
+  const [email, setEmail] = useState(""); // State for email input
+  const [message, setMessage] = useState(""); // State for message input
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,8 +45,8 @@ const EmailSection = () => {
     const response = await fetch(endpoint, options);
     if (response.status === 200) {
       setEmailSubmitted(true);
-      setEmail("");  // Clear email input
-      setMessage("");  // Clear message input
+      setEmail(""); // Clear email input
+      setMessage(""); // Clear message input
       // Hide the success message after 1 second
       setTimeout(() => {
         setEmailSubmitted(false);
@@ -66,9 +67,6 @@ const EmailSection = () => {
         </h2>
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
           <div className="mb-6">
-            {/* <label htmlFor="email" className="text-white text-sm font-medium">
-              Your email
-            </label> */}
             <input
               name="email"
               type="email"
@@ -76,22 +74,19 @@ const EmailSection = () => {
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg w-full p-2.5 mt-1"
               placeholder="Your email"
-              value={email}  // Controlled input
-              onChange={(e) => setEmail(e.target.value)}  // Update state on change
+              value={email} // Controlled input
+              onChange={(e) => setEmail(e.target.value)} // Update state on change
             />
           </div>
           <div className="mb-6">
-            {/* <label htmlFor="message" className="text-white text-sm font-medium">
-              Message
-            </label> */}
             <textarea
               name="message"
               id="message"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg w-full p-2.5 mt-1"
               placeholder="Let's talk about..."
               rows="6"
-              value={message}  // Controlled input
-              onChange={(e) => setMessage(e.target.value)}  // Update state on change
+              value={message} // Controlled input
+              onChange={(e) => setMessage(e.target.value)} // Update state on change
             />
           </div>
           <div className="flex items-center justify-between">
@@ -101,7 +96,6 @@ const EmailSection = () => {
             >
               Send
             </button>
-            {/* Social Icons */}
             <div className="flex space-x-4 ml-4">
               {dockItems.map((item, index) => (
                 <Link
@@ -117,7 +111,7 @@ const EmailSection = () => {
             </div>
           </div>
         </form>
-        {emailSubmitted && ( // Display success message without hiding the form
+        {emailSubmitted && (
           <p className="text-green-500 text-sm mt-2">
             Email sent successfully!
           </p>
