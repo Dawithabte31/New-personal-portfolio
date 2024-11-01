@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from 'next/image';
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -15,7 +16,7 @@ const dockItems = [
     href: "#aboutme",
 
     icon: (
-      <img
+      <Image
         width="48"
         height="48"
         src="https://img.icons8.com/deco-color/48/about.png"
@@ -27,7 +28,7 @@ const dockItems = [
     title: "Projects",
     href: "#projects",
     icon: (
-      <img
+      <Image
         width="48"
         height="48"
         src="https://img.icons8.com/deco-color/48/test-passed.png"
@@ -46,10 +47,10 @@ const dockItems = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-address-book"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="icon icon-tabler icons-tabler-outline icon-tabler-address-book"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" />
@@ -65,7 +66,7 @@ const dockItems = [
     title: "Skills",
     href: "#skills",
     icon: (
-<img width="48" height="48" src="/images/projects/hard-skills.png" alt="user-settings"/>    ),
+<Image width="48" height="48" src="/images/projects/hard-skills.png" alt="user-settings"/>    ),
   },
 ];
 

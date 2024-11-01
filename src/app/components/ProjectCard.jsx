@@ -11,7 +11,7 @@ const ProjectCard = ({
   gitUrl,
   previewUrl,
   technos,
-  onClick
+  onClick,
 }) => {
   return (
     // <div>
@@ -39,9 +39,11 @@ const ProjectCard = ({
     //     <p className="text-[#ADB7BE]">{description}</p>
     //   </div>
     // </div>
-    <div className=" max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer sm:h-300px" onClick={onClick}>
+    <div
+      className=" max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer sm:h-300px"
+      onClick={onClick}
+    >
       <WobbleCard containerClassName="sm:h-300px lg:col-span-2 md:h-[80%] bg-gray-800 lg:min-h-[300px]">
-
         <div className="max-w-xs">
           <h2 className="w-[450px] text-left text-balance text-base md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
             {title}
@@ -64,15 +66,17 @@ const ProjectCard = ({
             <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
           </Link>
           </div> */}
-          
-            <div className="flex flex-row gap-1 justify-center flex-wrap fixed md:w-[200px] mb-4">
-              {technos.map((techno) => (
-                <p className="flex text-[10px]  flex-row rounded-full bg-gray-800 p-2 mt-2">
-                  {techno}
-                </p>
-              ))}
-            </div>
-          
+
+          <div className="flex flex-row gap-1 justify-center flex-wrap fixed md:w-[200px] mb-4">
+            {technos.map((techno, index) => (
+              <p
+                key={`${techno}-${index}`} // Add a unique key here
+                className="flex text-[10px] flex-row rounded-full bg-gray-800 p-2 mt-2"
+              >
+                {techno}
+              </p>
+            ))}
+          </div>
         </div>
         <Image
           src={imgUrl}
@@ -87,9 +91,3 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
-
-
-
-
-
-

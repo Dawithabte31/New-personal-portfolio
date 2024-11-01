@@ -27,7 +27,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "E-commerce Application",
+    title: "consulting service website",
     description: "The TCS website showcases the firm’s consulting services in Ethiopia, featuring service details and client testimonials.",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
         My Projects
       </h2>
       <ul className="grid md:grid-cols-2 gap-4 md:gap-8 w-full px-4 md:px-14">
-        {filteredProjects.map((project, index) => (
+        {filteredProjects.map((project,index) => (
           <motion.li
             className="flex h-[300px] md:h-[400px] object-cover"
             key={project.id}
@@ -94,6 +94,7 @@ const ProjectsSection = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <ProjectCard
+              key={project.id || index}
               index={project.id}
               title={project.title}
               description={project.description}

@@ -13,9 +13,15 @@ const AboutDescription = () => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) observer.observe(ref.current);
-    return () => ref.current && observer.unobserve(ref.current);
-  }, []);
+    const currentRef = ref.current; // Store ref.current in a variable
+    if (currentRef) observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []); // Run only on mount
 
   return (
     <div
@@ -48,7 +54,7 @@ const AboutDescription = () => {
         <span className="text-[#4FD1C5] font-medium italic">Node.js</span>,{" "}
         <span className="text-[#4FD1C5] font-medium italic">Laravel</span>,{" "}
         <span className="text-[#4FD1C5] font-medium italic">Vue.js</span>,{" "}
-        <span className="text-[#4FD1C5] font-medium italic">Next.js</span>,{" "}. I am a
+        <span className="text-[#4FD1C5] font-medium italic">Next.js</span>. I am a
         quick learner and always looking to expand my knowledge and skill set.
       </motion.p>
       <motion.p

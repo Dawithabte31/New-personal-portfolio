@@ -1,4 +1,3 @@
-// components/SkillList.js
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -14,9 +13,15 @@ const SkillList = () => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) observer.observe(ref.current);
-    return () => ref.current && observer.unobserve(ref.current);
-  }, []);
+    const currentRef = ref.current; // Store ref.current in a variable
+    if (currentRef) observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []); // Only run once on mount
 
   return (
     <div
@@ -28,7 +33,7 @@ const SkillList = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-white mb-6 md:mb-12 "
+        className="text-4xl font-bold text-white mb-6 md:mb-12"
       >
         Skills I Have
       </motion.h2>
@@ -68,8 +73,7 @@ const SkillList = () => {
           ))}
         </div>
         <div className="flex flex-row gap-4 justify-center flex-wrap w-full">
-          {["Node.js", "Express.js", "Laravel","Vue.js"
-].map((skill) => (
+          {["Node.js", "Express.js", "Laravel", "Vue.js"].map((skill) => (
             <motion.p
               key={skill}
               variants={{
