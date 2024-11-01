@@ -11,6 +11,7 @@ const ProjectCard = ({
   gitUrl,
   previewUrl,
   technos,
+  onClick
 }) => {
   return (
     // <div>
@@ -38,8 +39,8 @@ const ProjectCard = ({
     //     <p className="text-[#ADB7BE]">{description}</p>
     //   </div>
     // </div>
-    <div className=" max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer">
-      <WobbleCard containerClassName="col-span-1 lg:col-span-2 md:h-[80%] bg-gray-800 lg:min-h-[300px]">
+    <div className=" max-w-7xl mx-auto px-4 w-[100%]  hover:cursor-pointer sm:h-300px" onClick={onClick}>
+      <WobbleCard containerClassName="sm:h-300px lg:col-span-2 md:h-[80%] bg-gray-800 lg:min-h-[300px]">
 
         <div className="max-w-xs">
           <h2 className="w-[450px] text-left text-balance text-base md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
@@ -86,3 +87,9 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
+
+
+
+
+
+

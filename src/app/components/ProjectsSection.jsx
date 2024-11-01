@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
 const projectsData = [
@@ -22,21 +21,20 @@ const projectsData = [
     description: "A project management portal for efficient task tracking, updates, and collaboration.",
     image: "/images/projects/pmp.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/RohaTech/Project-Managment-Software",
     previewUrl: "/",
-    technos: ["React", "Inertia", ,"Laravel","TaiwindCss"],
+    technos: ["React", "Inertia", "Laravel", "TaiwindCss"],
   },
   {
     id: 3,
     title: "E-commerce Application",
-    description: "Project 3 description",
+    description: "The TCS website showcases the firm’s consulting services in Ethiopia, featuring service details and client testimonials.",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/",
-    technos: ["React", "ExptressJs", "TaiwindCss"],
+    previewUrl: "https://tcsconsult.com.et",
+    technos: ["React", "ExpressJs", "TaiwindCss"],
   },
-
 ];
 
 const ProjectsSection = () => {
@@ -52,73 +50,61 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
 
-  // Variants for scaling the section
-  const sectionVariants = {
-    hidden: { scale: 0.9, opacity: 0 }, // Smaller and transparent
-    visible: { scale: 1, opacity: 1 }, // Full size and opaque
-    exit: { scale: 0.9, opacity: 0 }, // Shrink when exiting
-  };
-
-  const cardVariants = {
-    hidden: { scale: 0.8, opacity: 0 }, // Smaller and transparent
-    visible: { scale: 1, opacity: 1 }, // Full size and opaque
-    exit: { scale: 0.8, opacity: 0 }, // Shrink when exiting
+  const handleCardClick = (project) => {
+    if (project.id % 2 === 0) {
+      // Even index: redirect to gitUrl
+      window.location.href = project.gitUrl;
+    } else {
+      // Odd index: redirect to previewUrl
+      window.location.href = project.previewUrl;
+    }
   };
 
   return (
     <motion.section
       id="projects"
       ref={ref}
-      variants={sectionVariants}
+      variants={{
+        hidden: { scale: 0.9, opacity: 0 },
+        visible: { scale: 1, opacity: 1 },
+        exit: { scale: 0.9, opacity: 0 },
+      }}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"} // Trigger animation based on in view status
-      exit="exit" // Add exit animation
+      animate={isInView ? "visible" : "hidden"}
+      exit="exit"
       transition={{ duration: 0.5 }}
       className="mb-10"
     >
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-16">
         My Projects
       </h2>
-      {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-      </div> */}
-      <ul className="grid md:grid-cols-2 md:gap-2 w-[100%] md:px-14">
-        {filteredProjects.map((project, index) => {
-          return (
-            <motion.li
-              className="flex h-[400px]"
-              key={project.id}
-              variants={cardVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"} 
-              exit="exit" 
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imgUrl={project.image}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
-                technos={project.technos}
-              />
-            </motion.li>
-          );
-        })}
+      <ul className="grid md:grid-cols-2 gap-4 md:gap-8 w-full px-4 md:px-14">
+        {filteredProjects.map((project, index) => (
+          <motion.li
+            className="flex h-[300px] md:h-[400px] object-cover"
+            key={project.id}
+            variants={{
+              hidden: { scale: 0.8, opacity: 0 },
+              visible: { scale: 1, opacity: 1 },
+              exit: { scale: 0.8, opacity: 0 },
+            }}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            exit="exit"
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <ProjectCard
+              index={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+              technos={project.technos}
+              onClick={() => handleCardClick(project)} // Pass the click handler
+            />
+          </motion.li>
+        ))}
       </ul>
     </motion.section>
   );

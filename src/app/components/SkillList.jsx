@@ -61,21 +61,22 @@ const SkillList = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer"
+              className="text-[#ADB7BE] border-white hover:border-white rounded-full border-[1px] px-4 py-2 text-xl cursor-pointer"
             >
               {skill}
             </motion.p>
           ))}
         </div>
         <div className="flex flex-row gap-4 justify-center flex-wrap w-full">
-          {["Node.js", "Express.js", "Laravel"].map((skill) => (
+          {["Node.js", "Express.js", "Laravel","Vue.js"
+].map((skill) => (
             <motion.p
               key={skill}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="text-[#ADB7BE] border-white hover:border-white rounded-full border-2 px-6 py-3 text-xl cursor-pointer"
+              className="text-[#ADB7BE] border-white hover:border-white rounded-full border-[1px] px-4 py-2 text-xl cursor-pointer"
             >
               {skill}
             </motion.p>
