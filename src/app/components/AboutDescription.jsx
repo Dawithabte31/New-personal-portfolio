@@ -69,5 +69,6 @@ const AboutDescription = () => {
     </div>
   );
 };
+//dawit habitamu tewonde
 
 export default AboutDescription;
