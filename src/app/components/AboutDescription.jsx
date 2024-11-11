@@ -70,6 +70,6 @@ const AboutDescription = () => {
   );
 };
 //dawit habitamu tewonde
-//another comment
+// another comment here we go 
 
 export default AboutDescription;
