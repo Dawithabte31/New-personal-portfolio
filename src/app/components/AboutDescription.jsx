@@ -69,6 +69,5 @@ const AboutDescription = () => {
     </div>
   );
 };
-// another comment
 
 export default AboutDescription;
