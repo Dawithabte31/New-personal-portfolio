@@ -1,5 +1,4 @@
 import React from "react";
-//footer on the personal
 const Footer = () => {
   return (
     <footer className="footer border-t border-t-[#33353F] text-white bg-transparent">
