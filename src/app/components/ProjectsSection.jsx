@@ -35,6 +35,16 @@ const projectsData = [
     previewUrl: "https://tcsconsult.com.et",
     technos: ["React", "ExpressJs", "TaiwindCss"],
   },
+  {
+    id: 3,
+    title: "UTRADIE platform",
+    description: "UTRADIE is a platform that supports tradespeople from apprenticeship to business ownership through tools.",
+    image: "/images/projects/utradie.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "https://utradie.com/",
+    technos: ["React", "php", "TaiwindCss", "MYSQL"],
+  }
 ];
 
 const ProjectsSection = () => {
