@@ -6,6 +6,16 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
+    title: "UTRADIE platform",
+    description: "UTRADIE is a platform that supports tradespeople from apprenticeship to business ownership through tools.",
+    image: "/images/projects/utradie.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "https://utradie.com/",
+    technos: ["React", "php", "TaiwindCss", "MYSQL"],
+  },
+  {
+    id: 2,
     title: "Wollo University Techino Club Website",
     description:
       "A MERN stack-powered site for Wollo University’s Techino Club that simplifies student registration and event management",
@@ -16,7 +26,7 @@ const projectsData = [
     technos: ["React", "ExpressJs", "TaiwindCss"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Gizebet Project Management System",
     description: "A project management portal for efficient task tracking, updates, and collaboration.",
     image: "/images/projects/pmp.png",
@@ -26,7 +36,7 @@ const projectsData = [
     technos: ["React", "Inertia", "Laravel", "TaiwindCss"],
   },
   {
-    id: 3,
+    id: 4,
     title: "consulting service website",
     description: "The TCS website showcases the firm’s consulting services in Ethiopia, featuring service details and client testimonials.",
     image: "/images/projects/3.png",
@@ -34,16 +44,6 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "https://tcsconsult.com.et",
     technos: ["React", "ExpressJs", "TaiwindCss"],
-  },
-  {
-    id: 3,
-    title: "UTRADIE platform",
-    description: "UTRADIE is a platform that supports tradespeople from apprenticeship to business ownership through tools.",
-    image: "/images/projects/utradie.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "https://utradie.com/",
-    technos: ["React", "php", "TaiwindCss", "MYSQL"],
   }
 ];
 
